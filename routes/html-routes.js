@@ -6,38 +6,54 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 //
 module.exports = function (app) {
     //
-    app.get("/", function (req, res) {
+    app.get("/signup", function (req, res) {
         // If the user already has an account send them to the members page
         if (req.user) {
-            res.redirect("/members");
+            res.redirect("/dash");
         }
         res.sendFile(path.join(__dirname, "../public/signup.html"));
     });
-    //
+    // //
     app.get("/login", function (req, res) {
         // If the user already has an account send them to the members page
         if (req.user) {
-            res.redirect("/members");
+            res.redirect("/dash");
         }
         res.sendFile(path.join(__dirname, "../public/login.html"));
     });
 
     app.get("/", function (req, res) {
-        res.sendFile(path.join(__dirname, "/public/index.html"));
+        if (req.user) {
+            res.redirect("/dash");
+        }
+        res.sendFile(path.join(__dirname, "../public/index.html"));
     });
 
     app.get("/chat", function (req, res) {
-        res.sendFile(path.join(__dirname, "../public/chat1.html"))
-    })
-    app.get("/signup", function (req, res) {
-        res.sendFile(path.join(__dirname, "/public/signup.html"))
-    })
+        // If the user already has an account send them to the members page
+        if (req.user) {
+            res.redirect("/dash");
+        }
+        res.sendFile(path.join(__dirname, "../public/chat1.html"));
+    });
+
+    // // app.get("/signup", function (req, res) {
+    // //     res.sendFile(path.join(__dirname, "../public/signup.html"));
+    // // });
     app.get("/stat", function (req, res) {
-        res.sendFile(path.join(__dirname, "/public/stat-check.html"))
-    })
+        // If the user already has an account send them to the members page
+        if (req.user) {
+            res.redirect("/dash");
+        }
+        res.sendFile(path.join(__dirname, "../public/stat-check.html"));
+    });
     app.get("/dash", function (req, res) {
-        res.sendFile(path.join(__dirname, "/public/dashboard.html"))
-    })
+        // If the user already has an account send them to the members page
+        if (req.user) {
+            res.redirect("/dash");
+        }
+        res.sendFile(path.join(__dirname, "../public/dashboard.html"));
+    });
     //
     // Here we've add our isAuthenticated middleware to this route.
     // If a user who is not logged in tries to access this route they will be 
