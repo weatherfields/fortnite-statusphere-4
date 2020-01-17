@@ -1,0 +1,278 @@
+// use _config.scss in this file
+@import "config";
+// use utilities
+@import "utilities";
+@import "form";
+
+@font-face {
+  font-family: Fortnite;
+  src: url("../fonts/Burbank Big Condensed Black.ttf") format("truetype");
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// OpenSans,sans-serif,arial; used for navs and paragraphs
+body {
+  font-family: "Open Sans", sans-serif, arial;
+  font-size: 1rem;
+  line-height: 1.6;
+  background-color: #ffffff;
+  color: #333333;
+}
+
+a {
+  text-decoration: none;
+  color: $primary-color;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  // will hopefully allow images to takeup full width of container without breaking out
+  width: 100%;
+}
+
+#fish {
+  margin-top: 2rem;
+}
+
+#logo {
+  div {
+    // font-size: 2rem;
+    // border: 3px #f5f7ed solid;
+    // border-radius: 50%;
+    max-width: 20em;
+    margin-top: 1.5em;
+    // margin-bottom: 3rem;
+    transform: rotate(-10deg);
+
+    @include easeOut;
+
+    &:hover {
+      max-width: 15rem;
+      // padding: 0.5rem 1.5rem;
+      // background: $secondary-color;
+      // color: set-text-color($secondary-color);
+    }
+  }
+}
+
+
+// Navbar
+.navbar {
+  height: 15vh;
+  // use flex to align text inside the navbar
+  // use grid for main layout
+  display: flex;
+  align-items: center;
+  // move links to right ... puts all available space between the two flex items
+  justify-content: space-between;
+  // keep icons and text away from edges
+  padding: 0.3rem 1rem;
+  // keep it at the top
+  position: fixed;
+  // keep it on top of the rest of the content
+  z-index: 1;
+  width: 100%;
+  top: 0;
+  border-bottom: solid 1px $primary-color;
+  // opacity: 0.9;
+
+  // nest this list to align links side by side
+  ul {
+    display: flex;
+  }
+
+  transform: translate3d(0, 0, 0);
+
+  a {
+    color: #ffffff;
+    padding: 0.45rem;
+    margin: 0 0.25rem;
+
+    // hover
+    &:hover {
+      color: $primary-color;
+      @include quickOut;
+    }
+
+    &.nav-link {
+      font-size: 1rem;
+
+      &:hover {
+        color: $success-color;
+      }
+
+      &.current {
+        color: #fae292;
+      }
+    }
+
+  }
+
+  #iconwraps {
+
+    display: flex;
+    align-items: center;
+    // max-width: 200rem;
+  }
+
+  #ff-small {
+    font-family: Fortnite;
+    font-size: 3rem;
+  }
+
+  .nav-icon {
+    display: flex;
+    // align-items: baseline;
+  }
+
+  #burger-guy {
+    display: block;
+    max-width: 9em;
+    // margin-top: 1vh;
+    max-height: 15vh;
+    width: auto;
+    height: auto;
+    margin-bottom: 1px;
+    // max-width: 13vw;
+    // height: 13vh;
+  }
+
+  .icon-btn {
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+    @include easeOut; // right: 35px;
+
+    #img-spin {
+
+      max-width: 5em;
+      @include easeOut;
+    }
+
+    // spin the icon
+    &.close {
+      transform: rotate(1440deg);
+    }
+  }
+}
+
+// hide / unhide menu links
+
+.menu {
+  position: fixed;
+  // z-index: -1;
+  top: 0;
+  width: 100%;
+  visibility: hidden;
+  opacity: 0.9;
+
+  &.show {
+    // when button is clicked the menu is visible
+    visibility: visible;
+  }
+
+  &-nav {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    // justify-content: center;
+    float: right;
+    // this is where you set the width of your menu and the height. VH is viewport height.
+    width: 33vw;
+    height: 40vh;
+    overflow: hidden; // gets rid of scroll bars
+    // z-index: -2;
+    margin-top: 15vh;
+    padding: 1rem;
+    // darken is specific to sass
+    background: darken(#1c1751, 10);
+    // opacity: 1;
+    border: solid 1px $primary-color;
+    border-radius: 0 0 0 2rem;
+    // dont' show until the class of show is applied
+    transform: translate3d(100%, 0, 0);
+    @include easeOut;
+
+    &.show {
+      // unstick it from the top and have it slide in.
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  &-img {
+    max-width: 8rem;
+  }
+}
+
+// Landing
+
+.landing {
+  position: relative;
+  // 100vh is the entire height of the browser no matter how strethed or big
+  background: url("../images/map.jpg") no-repeat center center/cover;
+  height: 100vh;
+
+  &-inner {
+    color: #ffffff;
+    // flexbox will be used to align everything, so height 100%
+    height: 100%;
+    display: flex;
+    // align vertical instead of horizontal
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    align-items: center;
+    // center vertically up/down page (will also have to do the same to container ... dark-overlay).
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+.fort-font {
+  font-family: Fortnite;
+  font-size: 7rem;
+}
+
+#land-small {
+  font-size: 4rem;
+}
+
+// Randoms ///////
+// #flying-dude {
+//   max-width: 50%;
+//**************************************************
+// navbar people
+//***************************************************
+
+.middleDude {
+  margin-top: 5vh;
+  width: 10vw;
+  height: 10vh;
+  margin-bottom: 1px;
+
+}
+
+// }
+
+// forum profile
+
+.profile {
+  display: grid;
+  grid-template-columns: 2fr 4fr 2fr;
+  align-items: center;
+  grid-gap: 2rem;
+  padding: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+@import 'mobile';

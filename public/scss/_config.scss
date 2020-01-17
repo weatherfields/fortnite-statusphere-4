@@ -1,0 +1,95 @@
+/* all variables and colors, etc go in this file */
+$nav-color: #2a2a2a;
+$primary-color: #4c51f7;
+// $dark-color: #180537;
+$dark-color: #2a095f;
+$light-color: #ffffff;
+$danger-color: #e25bff;
+$success-color: #319236;
+// containers max-width
+$max-width: 1100px;
+
+// function to set text color based on background lightness
+@function set-text-color($color) {
+    @if(lightness($color) > 50) {
+        @return #2a095f;
+    }
+
+    @else {
+        @return #ffffff;
+    }
+}
+
+// mixin is sorta like a function that doesn't return anything. It outputs whatever you put in (text color, background color, etc)
+// set background & text color
+@mixin set-background($color) {
+    background-color: $color;
+    color: set-text-color($color);
+}
+
+// global transition to be used on the icon ... and whatever else that might come up.
+@mixin easeOut {
+    transition: all 0.7s ease-out;
+}
+
+@mixin quickOut {
+    transition: all 0.3s ease-out;
+}
+
+// Margins / Padding presets
+
+$spaceSize: (1, 2, 3, 4, 5);
+
+// each loop for space 
+
+@each $space in $spaceSize {
+
+    // All around margin
+    // template literal 
+    .m-#{$space} {
+        margin: #{$space}rem;
+    }
+
+    // Vertical Margin
+    .my-#{$space} {
+        margin: #{$space}rem 0;
+    }
+
+    // All around padding
+    .p-#{$space} {
+        padding: #{$space}rem;
+    }
+
+    // Vertical Padding
+    .py-#{$space} {
+        padding: #{$space}rem 0;
+    }
+}
+
+// media queries (mixin)
+@mixin mediaSm {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+// med
+@mixin mediaMd {
+    @media screen and (min-width: 481px) and (max-width: 760px) {
+        @content;
+    }
+}
+
+// large
+@mixin mediaPad {
+    @media screen and (min-width: 761px) and (max-width: 1024px) {
+        @content;
+    }
+}
+
+// // extra large
+// @mixin mediaXl {
+//     @media screen and (min-width: 1171px) {
+//         @content;
+//     }
+// }

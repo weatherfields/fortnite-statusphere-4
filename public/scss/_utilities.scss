@@ -1,0 +1,173 @@
+// Container
+.container {
+  max-width: $max-width;
+  // move everything to middle
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2rem;
+  // covered by navbar so add margin-top
+  margin-top: 8rem;
+  margin-bottom: 3rem;
+}
+
+// sass file for utilities (stuff that's used a lot)
+
+// text sizes and styles
+.x-large {
+  font-size: 4rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.large {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.lead {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.text-primary {
+  font-size: 2.5rem;
+  color: $primary-color;
+}
+
+.text-secondary {
+  text-align: center;
+  font-size: 1.7rem;
+  color: $primary-color;
+}
+
+.round-img {
+  border-radius: 50%;
+}
+
+// background colors
+.bg {
+  // & is a placeholder. .bg is the parent and will be put in its place.
+
+  &-nav {
+    // include the mixin created in _config.scss
+    @include set-background($nav-color);
+  }
+
+  &-primary {
+    // include the mixin created in _config.scss
+    @include set-background($primary-color);
+  }
+
+  &-light {
+    // include the mixin created in _config.scss
+    @include set-background($light-color);
+    border: #ccc 1px solid;
+  }
+
+  &-dark {
+    // include the mixin created in _config.scss
+    @include set-background($dark-color);
+  }
+
+  &-success {
+    // include the mixin created in _config.scss
+    @include set-background($success-color);
+  }
+
+  &-danger {
+    // include the mixin created in _config.scss
+    @include set-background($danger-color);
+  }
+
+  &-white {
+    // include the mixin created in _config.scss
+    @include set-background(#ffffff);
+  }
+}
+
+// buttons
+.btn {
+  // display: inline-block;
+  background: $light-color;
+  // color: #333;
+  padding: 0.4rem 1.3rem;
+  border: none;
+  // cursor as pointer to use on links and buttons
+  cursor: pointer;
+  font-size: 1rem;
+  margin-right: 0.5rem;
+  outline: none;
+  // trans below will lighten the button color below by 5% over 200ms.
+  transition: all 0.2s ease-in;
+
+  &.btn-primary {
+    @include set-background($primary-color);
+
+    // in sass there's lighten and darken, so that's cool... below will lighten by 5%.
+    &:hover {
+      background: lighten($primary-color, 5%);
+    }
+  }
+
+  &.btn-stat-chk {
+    @include set-background($success-color);
+
+    &:hover {
+      background: lighten($primary-color, 5%);
+    }
+  }
+
+  &.btn-stat-chk1 {
+    border-radius: 1rem;
+    @include set-background($success-color);
+
+    &:hover {
+      background: lighten($primary-color, 5%);
+    }
+  }
+
+  &.btn-success {
+    @include set-background($success-color);
+
+    // in sass there's lighten and darken, so that's cool... below will lighten by 5%.
+    &:hover {
+      background: lighten($success-color, 5%);
+    }
+  }
+
+  &.btn-dark {
+    @include set-background($dark-color);
+
+    // in sass there's lighten and darken, so that's cool... below will lighten by 5%.
+    &:hover {
+      background: lighten($dark-color, 5%);
+    }
+  }
+
+  &.btn-danger {
+    @include set-background($danger-color);
+
+    // in sass there's lighten and darken, so that's cool... below will lighten by 5%.
+    &:hover {
+      background: lighten($danger-color, 5%);
+    }
+  }
+
+  // in contrast to the other buttons, the main will darken
+  &:hover {
+    background: lighten($dark-color, 20%);
+    color: #ffffff;
+  }
+}
+
+// darken all background images
+.dark-overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  // rgba allows transparent colors
+  background-color: rgba(0, 0, 0, 0.7);
+}

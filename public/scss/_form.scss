@@ -1,0 +1,236 @@
+// Signup Page
+.landing-form {
+    position: relative;
+    // 100vh is the entire height of the browser no matter how strethed or big
+    background: url("../images/battleBus.jpg") no-repeat center center/cover;
+    height: 100vh;
+
+    &-inner {
+        color: #ffffff;
+        // flexbox will be used to align everything, so height 100%
+        height: 100%;
+        display: flex;
+        // align vertical instead of horizontal
+        flex-direction: column;
+        width: 80%;
+        margin: auto;
+        align-items: center;
+        // center vertically up/down page (will also have to do the same to container ... dark-overlay).
+        justify-content: center;
+        text-align: center;
+    }
+
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.form-container {
+    max-width: 50%;
+    // move everything to middle 
+    margin: auto;
+    overflow: hidden;
+    padding: 0 2rem;
+    // covered by navbar so add margin-top
+    margin-top: 12rem;
+    margin-bottom: 3rem;
+    border: solid 1px $primary-color;
+    border-radius: 1rem;
+    background-color: #ffffff;
+
+    &-stats {
+        // text-align: center;
+        // width: auto;
+        max-width: 90%;
+        height: 70vh;
+        margin: auto;
+        overflow: hidden;
+        padding: 0.2rem 1.5rem 1rem 1.5rem;
+        // covered by navbar so add margin-top
+        margin-top: 13rem;
+        margin-bottom: 3rem;
+        border: solid 1px $primary-color;
+        border-radius: 1rem;
+        background-color: #ffffff;
+    }
+
+
+}
+
+
+.form {
+    &-group {
+        margin: 1rem 0;
+    }
+
+    &-text {
+        display: block;
+        margin-top: 0.3rem;
+        color: #888;
+    }
+
+    input[type='text'],
+    input[type='email'],
+    input[type='password'],
+    input[type='date'],
+    select,
+    textarea {
+        display: block;
+        width: 100%;
+        padding: 0.4rem;
+        border: 1px solid #ccc;
+    }
+}
+
+// Randoms 
+.FnPeople {
+    max-width: 5.5rem;
+}
+
+.FnObjects {
+    max-width: 4rem;
+}
+
+// #acctCharacters {
+//     max-width: 30vw;
+// }
+
+
+#menu-img-index {
+    max-width: 8.5rem;
+}
+
+
+// **************************************************************************************************** //
+// Login page specific
+.landing-form1 {
+    position: relative;
+    // 100vh is the entire height of the browser no matter how strethed or big
+    background: url("../images/day-background.jpg") no-repeat center center/cover;
+    height: 100vh;
+
+    &-inner {
+        color: #ffffff;
+        // flexbox will be used to align everything, so height 100%
+        height: 100%;
+        display: flex;
+        // align vertical instead of horizontal
+        flex-direction: column;
+        width: 80%;
+        margin: auto;
+        align-items: center;
+        // center vertically up/down page (will also have to do the same to container ... dark-overlay).
+        justify-content: center;
+        text-align: center;
+    }
+
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+// *******************
+// stats page specific
+.grid-container {
+
+    input[type='text'],
+    input[type='email'],
+    input[type='password'],
+    input[type='date'],
+    select,
+    textarea {
+        // display: block;
+        width: fit-content;
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+    }
+}
+
+.stat-chk-item {
+
+    color: $primary-color;
+    font-size: 1.4rem;
+    line-height: 1;
+
+    &-1 {
+        margin-top: 0.5em;
+        color: $primary-color;
+        font-size: 1.4rem;
+        line-height: 1;
+    }
+}
+
+.landing-form-2 {
+    position: relative;
+    // 100vh is the entire height of the browser no matter how strethed or big
+    background: url("../images/fortnight.png") no-repeat center center/cover;
+    height: 100vh;
+
+    &-inner {
+        color: #ffffff;
+        // flexbox will be used to align everything, so height 100%
+        height: 100%;
+        display: flex;
+        // align vertical instead of horizontal
+        flex-direction: column;
+        width: 80%;
+        margin: auto;
+        align-items: center;
+        // center vertically up/down page (will also have to do the same to container ... dark-overlay).
+        justify-content: center;
+        text-align: center;
+    }
+
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#pinkbear {
+    // margin: auto;
+    justify-items: center;
+    display: grid;
+    grid-template-areas:
+        'img img img';
+    grid-template-columns: 27fr 42fr 27fr;
+    // align-items: center;
+
+}
+
+#stchklogo {
+    height: 80%;
+}
+
+#unicorn {
+    // margin-left: 9vh;
+    max-width: 9em;
+    max-height: 15vh;
+    width: auto;
+    height: auto;
+}
+
+#girl3 {
+    // margin-left: 9vh;
+    max-width: 9em;
+    max-height: 15vh;
+    width: auto;
+    height: auto;
+}
+
+#statcheck {
+    width: 20rem;
+}
+
+.stat-wrapper {
+
+    // margin-top: 1rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+}

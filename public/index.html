@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- fonts -->
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12/css/all.css"> -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <!-- css -->
+    <link rel="stylesheet" href="./css/style.min.css">
+    <!-- font awesome js -->
+    <script src="https://kit.fontawesome.com/eb3a292926.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <title>Welcome To The Fortnite Statosphere</title>
+</head>
+
+<body>
+    <!-- bg-dark connects to _utilities.scss, which connects to _config for colors-->
+    <!-- <i class="fas fa-code"></i> -->
+    <nav class="navbar bg-nav">
+        <div id="logo">
+            <div>
+                <a href="index.html"><img id="fnIcon" src="images/statusphereMainLog.png"></a>
+            </div>
+        </div>
+        <!-- <img class="middleDude" src="images/gun2png.png">
+        <img class="middleDude" src="images/gun3.png">
+        <img class="middleDude" src="images/gun4.png"> -->
+        <!-- toggle items  -->
+        <div class="menu">
+            <ul class="menu-nav">
+                <li class="nav-item">
+                    <a href="/" class="nav-link current">
+                        Home
+                    </a>
+                </li>
+                <br>
+                <li class="nav-item">
+                    <a href="/dash" class="nav-link">
+                        Dashboard
+                    </a>
+                </li>
+                <br>
+                <li class="nav-item">
+                    <a href="/signup" class="nav-link">
+                        Signup
+                    </a>
+                </li>
+                <br>
+                <li class="nav-item">
+                    <a href="/login" class="nav-link">
+                        Login
+                    </a>
+                </li>
+                <br>
+                <li class="nav-item">
+                    <a href="/stat" class="nav-link">
+                        Statusphere Check!
+                    </a>
+                </li>
+                <br>
+                <li class="nav-item">
+                    <a href="/chat" class="nav-link">
+                        Stat Chat
+                    </a>
+                </li>
+                <div id="menu-img-index">
+                    <!-- <img src="images/guy-girl.png"> -->
+                    <img id="fish" src="images/fishstick.png" alt="fish">
+                </div>
+            </ul>
+        </div>
+        <!-- below is the fortnite icon that i need to get spinning -->
+        <div class="nav-icon">
+            <img id="burger-guy" src="images/burger3.png">
+            <div class="icon-btn">
+                <img src="images/fortnite-logo-2.png" id="img-spin">
+            </div>
+        </div>
+    </nav>
+    <section class="landing">
+        <div class="dark-overlay">
+            <div class="landing-inner">
+                <h1 class="x-large fort-font">FORTNITE <p id="land-small">Statusphere</p>
+                </h1>
+                <p class="lead" id="welcome">Browse the Forum, Start a New Topic, See Your Stats, Meet New Friends, and
+                    More...</p>
+                <div class="buttons">
+                    <a href="signup.html" class="btn btn-primary">Sign Up</a>
+                    <a href="/login" class="btn btn">Login</a>
+                    <!-- <div class="header header-btns"> <button id="login" type="button"
+                            class="btn btn-lg logs">Login</button>
+                        <button id="logout" type="button" class="btn btn-lg logs">Logout</button>
+                    </div> -->
+                </div>
+            </div>
+    </section>
+    <script src="./javascript/scss.js"></script>
+</body>
+
+</html>
