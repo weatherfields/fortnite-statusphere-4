@@ -54,13 +54,20 @@ module.exports = function (app) {
         }
         res.sendFile(path.join(__dirname, "../public/dashboard.html"));
     });
+    app.get("/forum", function (req, res) {
+        // If the user already has an account send them to the members page
+        if (req.user) {
+            res.redirect("/dash");
+        }
+        res.sendFile(path.join(__dirname, "../public/forum.html"));
+    });
     //
     // Here we've add our isAuthenticated middleware to this route.
     // If a user who is not logged in tries to access this route they will be 
     //redirected to the signup page
-    // app.get("/", isAuthenticated, function (req, res) {
-    //     res.sendFile(path.join(__dirname, "../public/members.html"));
-    // });
+    app.get("/signup", isAuthenticated, function (req, res) {
+        res.sendFile(path.join(__dirname, "../public/signup.html"));
+    });
 
     // app.get("/chat_chat_chat", (req, res) => {
     //     res.render("index")
